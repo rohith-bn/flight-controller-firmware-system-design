@@ -1,5 +1,9 @@
 # Requirements
 
+## Purpose Of This Document
+
+This document captures the formal requirements for QFC-1 after the initial vague request has been refined into a clearer embedded firmware problem. It focuses on what the system shall do, what constraints it must obey, and what conditions define successful bench-level completion.
+
 ## Functional Requirements
 
 ### Startup And Calibration

@@ -1,5 +1,9 @@
 # Problem Statement
 
+## Purpose Of This Document
+
+This document defines the problem QFC-1 exists to solve. It focuses on why the system is needed, what outcome matters, and what scope is intentionally chosen for this learning-focused project.
+
 ## System Purpose
 
 QFC-1 is a deterministic embedded firmware system for stabilizing a quadcopter airframe on the roll and pitch axes.
@@ -14,7 +18,7 @@ The firmware continuously:
 
 The system is intentionally narrow. It is designed for bench validation and learning, not for autonomous flight.
 
-## Problem
+## Problem Definition
 
 A quadcopter airframe is unstable by nature. If it is disturbed, it does not passively return to level. It needs fast, continuous correction.
 
@@ -32,56 +36,31 @@ This problem is interesting because it combines:
 - Safety-state enforcement.
 - Real-time execution constraints.
 
-## System Boundary
+## Definition Of Success
 
-Inside the firmware boundary:
+At a high level, this project is successful if the system can:
 
-- IMU data acquisition through a HAL interface.
-- MPU6050 identity validation.
-- Gyroscope bias calibration.
-- Raw sensor conversion into engineering units.
-- Roll and pitch attitude estimation.
-- Roll and pitch setpoint handling.
-- PID control.
-- Quad-X motor mixing.
-- Motor command clamping.
-- PWM output through a HAL interface.
-- Safety state management.
-- Fault detection and shutdown behavior.
+- Keep the design focused on roll and pitch stabilization rather than full drone flight.
+- Define a clear, deterministic control problem that can be implemented within a 1 ms execution cycle.
+- Establish a safety-first firmware concept in which unsafe conditions never result in uncontrolled motor output.
+- Provide enough clarity to move into system context, use cases, responsibilities, and implementation without inventing the system blindly.
 
-Outside the firmware boundary:
+## Intended Scope
 
-- MCU clock and peripheral configuration.
-- Low-level I2C driver implementation.
-- Low-level PWM timer implementation.
-- ESC and motor physics.
-- Actual aircraft flight.
-- Operator hardware reset.
+This project is intentionally scoped as a learning-oriented embedded firmware case study.
 
-## Actors
+Within that scope, the system is intended to:
 
-### Developer / Operator
+- Estimate roll and pitch from IMU data.
+- Compute corrective control outputs.
+- Translate those corrections into four motor commands.
+- Enforce safe operating behavior through explicit system states.
+- Be validated on the bench rather than through real flight.
 
-Powers the system, observes bench behavior, and may issue arm or disarm commands during validation.
-
-### IMU Hardware
-
-Provides raw accelerometer and gyroscope readings. The initial target IMU is the MPU6050.
-
-### HAL
-
-Provides trusted hardware access services such as I2C reads/writes, PWM writes, and a 1 ms tick signal.
-
-### ESC And Motor Assembly
-
-Receives PWM commands and drives motor output. The firmware must never send unsafe motor commands.
-
-### Physical Environment
-
-Applies gravity, vibration, and angular disturbance to the airframe.
+The project is not intended to solve the entire drone problem. It is meant to isolate one meaningful embedded control problem and design it well.
 
 ## Non-Goals
 
-QFC-1 does not attempt to solve full drone flight. It does not include navigation, altitude hold, yaw control, RC input, wireless telemetry, or autonomous behavior.
+QFC-1 does not attempt to solve full drone flight. It does not include navigation, altitude hold, yaw control, RC input, wireless telemetry, or autonomous behavior. It also does not attempt to explore every possible control or estimation strategy. The point is to design and implement one focused real-time firmware subsystem well.
 
 The point of the project is to design and implement a focused real-time firmware subsystem well.
