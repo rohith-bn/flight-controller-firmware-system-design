@@ -4,6 +4,12 @@ QFC-1 is a learning-focused embedded firmware project for a quadcopter flight co
 
 The firmware stabilizes a quadcopter airframe on the roll and pitch axes by repeatedly running a sense-estimate-control-actuate loop within a fixed 1 ms cycle.
 
+## Naming Note
+
+`flight-controller-firmware-system-design` is the repository name for the overall learning project.
+
+`QFC-1` is the case-study system name used inside the documentation. It stands for **Quadcopter Flight Controller - 1** and refers to the specific firmware system being analyzed, designed, and later implemented through this repo.
+
 ## Project Intent
 
 This repository is structured as both:
@@ -64,6 +70,9 @@ The project emphasizes the following embedded system design skills:
 documents/
   01-problem-statement.md
   02-requirements.md
+  02.1-requirement-extraction.md
+  03-system-context.md
+  03.1-system-context-diagram.md
 firmware/
   include/
   src/
@@ -76,15 +85,20 @@ tools/
 
 - [Problem Statement](documents/01-problem-statement.md)
 - [Requirements](documents/02-requirements.md)
+- [Requirement Extraction Notes](documents/02.1-requirement-extraction.md)
+- [System Context](documents/03-system-context.md)
+- [System Context Diagram](documents/03.1-system-context-diagram.md)
 
-Planned documentation:
+Planned design-document flow:
 
-- System context diagram.
-- Object model and responsibility map.
-- Runtime architecture.
-- Module catalog.
-- TDD strategy.
-- Bench validation plan.
+- `04-use-cases-and-responsibilities.md`
+- `05-design-approach.md`
+- `06-candidate-objects-vs-functional-modules.md`
+- `07-object-model.md`
+- `08-crc-cards.md`
+- `09-object-model-decomposition.md`
+- `10-event-model.md`
+- `11-runtime-view.md`
 
 ## Firmware Architecture Snapshot
 
@@ -105,15 +119,13 @@ Motor outputs are suppressed unless the system is explicitly in the ARMED state.
 
 ## Development Status
 
-Status: project skeleton initialized.
+Status: early design phase in progress.
 
-Next milestones:
+Current focus:
 
-1. Finalize system design documents.
-2. Define C module interfaces.
-3. Add host-buildable unit tests.
-4. Implement pure logic modules first.
-5. Add HAL adapters and bench validation hooks.
+1. Finalize the design-document flow through system context, use cases, responsibilities, object thinking, event modeling, and runtime view.
+2. Keep the documentation aligned with the broader goal of learning and explaining embedded system design methods through the QFC-1 case study.
+3. Use the completed design set as the basis for later implementation planning and coding.
 
 ## Definition Of Done
 
