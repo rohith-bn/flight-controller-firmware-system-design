@@ -88,10 +88,10 @@ tools/
 - [Requirement Extraction Notes](documents/02.1-requirement-extraction.md)
 - [System Context](documents/03-system-context.md)
 - [System Context Diagram](documents/03.1-system-context-diagram.md)
+- [Use Cases And Responsibilities](documents/04-use-cases-and-responsibilities.md)
 
 Planned design-document flow:
 
-- `04-use-cases-and-responsibilities.md`
 - `05-design-approach.md`
 - `06-candidate-objects-vs-functional-modules.md`
 - `07-object-model.md`
