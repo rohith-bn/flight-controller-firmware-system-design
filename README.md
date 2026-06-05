@@ -73,6 +73,10 @@ documents/
   02.1-requirement-extraction.md
   03-system-context.md
   03.1-system-context-diagram.md
+  04-use-cases-and-responsibilities.md
+  04.1-use-case-diagram.md
+  05-design-approach.md
+  06-candidate-objects-vs-functional-modules.md
 firmware/
   include/
   src/
@@ -89,11 +93,12 @@ tools/
 - [System Context](documents/03-system-context.md)
 - [System Context Diagram](documents/03.1-system-context-diagram.md)
 - [Use Cases And Responsibilities](documents/04-use-cases-and-responsibilities.md)
+- [Use Case Diagram](documents/04.1-use-case-diagram.md)
+- [Design Approach](documents/05-design-approach.md)
+- [Candidate Objects Vs Functional Modules](documents/06-candidate-objects-vs-functional-modules.md)
 
 Planned design-document flow:
 
-- `05-design-approach.md`
-- `06-candidate-objects-vs-functional-modules.md`
 - `07-object-model.md`
 - `08-crc-cards.md`
 - `09-object-model-decomposition.md`
