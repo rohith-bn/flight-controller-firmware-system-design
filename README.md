@@ -77,6 +77,7 @@ documents/
   04.1-use-case-diagram.md
   05-design-approach.md
   06-candidate-objects-vs-functional-modules.md
+  07-object-model.md
 firmware/
   include/
   src/
@@ -96,10 +97,10 @@ tools/
 - [Use Case Diagram](documents/04.1-use-case-diagram.md)
 - [Design Approach](documents/05-design-approach.md)
 - [Candidate Objects Vs Functional Modules](documents/06-candidate-objects-vs-functional-modules.md)
+- [Object Model](documents/07-object-model.md)
 
 Planned design-document flow:
 
-- `07-object-model.md`
 - `08-crc-cards.md`
 - `09-object-model-decomposition.md`
 - `10-event-model.md`
