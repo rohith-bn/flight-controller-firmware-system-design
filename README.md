@@ -88,50 +88,34 @@ tools/
 
 ## Documentation
 
-- [Problem Statement](documents/01-problem-statement.md)
-- [Requirements](documents/02-requirements.md)
-- [Requirement Extraction Notes](documents/02.1-requirement-extraction.md)
-- [System Context](documents/03-system-context.md)
-- [System Context Diagram](documents/03.1-system-context-diagram.md)
-- [Use Cases And Responsibilities](documents/04-use-cases-and-responsibilities.md)
-- [Use Case Diagram](documents/04.1-use-case-diagram.md)
-- [Design Approach](documents/05-design-approach.md)
-- [Candidate Objects Vs Functional Modules](documents/06-candidate-objects-vs-functional-modules.md)
-- [Object Model](documents/07-object-model.md)
-
-Planned design-document flow:
-
-- `08-crc-cards.md`
-- `09-object-model-decomposition.md`
-- `10-event-model.md`
-- `11-runtime-view.md`
-
-## Firmware Architecture Snapshot
-
-The control pipeline is expected to run once per 1 ms tick:
-
-```text
-IMU read
-  -> unit conversion
-  -> attitude estimation
-  -> setpoint comparison
-  -> PID control
-  -> motor mixing
-  -> command clamping
-  -> PWM output
-```
-
-Motor outputs are suppressed unless the system is explicitly in the ARMED state. FAULT is a one-way safety state that forces all motor outputs to zero until hardware reset.
+- [01: Problem Statement](documents/01-problem-statement.md)
+- [02: Requirements](documents/02-requirements.md)
+- [02.1: Requirement Extraction Notes](documents/02.1-requirement-extraction.md)
+- [03: System Context](documents/03-system-context.md)
+- [03.1: System Context Diagram](documents/03.1-system-context-diagram.md)
+- [04: Use Cases And Responsibilities](documents/04-use-cases-and-responsibilities.md)
+- [04.1: Use Case Diagram](documents/04.1-use-case-diagram.md)
+- [05: Design Approach](documents/05-design-approach.md)
+- [06: Candidate Objects Vs Functional Modules](documents/06-candidate-objects-vs-functional-modules.md)
+- [07: Object Model](documents/07-object-model.md)
+- [08: CRC Cards](documents/08-crc-cards.md)
+- [09: Object Model Decomposition](documents/09-object-model-decomposition.md)
+- [10: System Event Model](documents/10-event-model.md)
+- [11: Runtime View](documents/11-runtime-view.md)
+- [12: Module Catalog](documents/12-module-catalog.md)
+- [13: TDD Test Strategy](documents/13-test-strategy.md)
+- [14: Architectural Decision Log](documents/14-decision-log.md)
 
 ## Development Status
 
-Status: early design phase in progress.
+Status: Phase 1 (System Design & Formal Documentation) 100% Complete.
 
-Current focus:
+Next phase focus:
+1. Initialize host test runner in `tests/`.
+2. Implement Category A pure logic modules via TDD (zero mocks).
+3. Implement Category B orchestration modules and Category C hardware seams.
+4. Execute benchtop verification and live 3D telemetry simulation.
 
-1. Finalize the design-document flow through system context, use cases, responsibilities, object thinking, event modeling, and runtime view.
-2. Keep the documentation aligned with the broader goal of learning and explaining embedded system design methods through the QFC-1 case study.
-3. Use the completed design set as the basis for later implementation planning and coding.
 
 ## Definition Of Done
 

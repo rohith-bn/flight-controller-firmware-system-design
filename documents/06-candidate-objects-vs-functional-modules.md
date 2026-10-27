@@ -281,7 +281,7 @@ For example:
 - `pwm_driver` is about output integration
 - `imu_converter` is about deterministic transformation of raw values
 
-These do not need to be over-romanticized into richer objects than they really are.
+These do not need to be over-crowded into richer objects than they really are.
 
 ## A Hybrid Structural Direction For QFC-1
 
