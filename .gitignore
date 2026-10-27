@@ -48,3 +48,9 @@ content/linkedin/
 **/.pio/
 .vscode/
 **/.vscode/
+
+# Binaries & Simulation Logs
+*.exe
+simulation/build/
+simulation/logs/
+*.csv
