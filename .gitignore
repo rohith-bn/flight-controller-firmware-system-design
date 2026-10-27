@@ -32,3 +32,19 @@ Thumbs.db
 # Temporary files
 tmp/
 *.log
+
+# Internal reference & extracted materials (never pushed to git)
+reference_only/
+reference_extracted/
+
+
+# Social media and career drafts belong in the private career hub, never here
+*linkedin*
+content/linkedin/
+
+
+# PlatformIO & IDE
+.pio/
+**/.pio/
+.vscode/
+**/.vscode/
